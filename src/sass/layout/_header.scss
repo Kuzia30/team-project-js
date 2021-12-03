@@ -1,3 +1,7 @@
+.header-container {
+  height: 230px;
+}
+
 .header-overlay {
   height: 230px;
 
@@ -5,7 +9,7 @@
   background-size: cover;
   margin: 0 auto;
   max-width: 1600px;
-  background-color: #c4c4c4;
+  background-color: var(--footer-grey-color);
 }
 
 .header-overlay__home {
@@ -97,4 +101,51 @@
   display: block;
   height: 3px;
   background: var(--accent-color);
+}
+
+.input-wrap {
+  position: relative;
+  width: 280px;
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+  margin-top: 37px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-bottom: 0.5px solid var(--primary-white-color);
+}
+
+.input-key {
+  display: block;
+  width: 100%;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+
+  color: var(--primary-white-color);
+
+  background-color: inherit;
+  border: none;
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+
+    color: var(--primary-white-color);
+  }
+}
+
+.input-wrap::after {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  content: '';
+  display: block;
+  background-image: url(../images/search.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
 }
