@@ -4,23 +4,19 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  text-align: center; */
-
-  color: #545454;
-}
-
-.footer__link {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
   color: #545454;
 }
 
 @media screen and (max-width: 767px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .footer {
     padding-top: 30px;
     padding-bottom: 30px;
