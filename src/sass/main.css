@@ -96,4 +96,230 @@ a {
     padding-left: 71px;
   }
 }
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo__icon {
+  width: 100%;
+}
+
+.logo__title {
+  display: none;
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.17;
+  color: var(--primary-white-color);
+}
+
+@media screen and (min-width: 768px) {
+  .logo__title {
+    display: block;
+  }
+}
+
+.header-container {
+  height: 230px;
+}
+
+.header-overlay {
+  height: 230px;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: var(--footer-grey-color);
+}
+
+.header-overlay__home {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/mobile/mobile-header.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/mobile/mobile-header.jpg);
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .header-overlay__home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/mobile/mobile-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/mobile/mobile-header@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-overlay__home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/tablet/tablet-header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/tablet/tablet-header.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header-overlay__home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/tablet/tablet-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/tablet/tablet-header@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-overlay__home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/desktop/desktop-header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/desktop/desktop-header.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .header-overlay__home {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/home/desktop/desktop-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/home/desktop/desktop-header@2x.jpg);
+  }
+}
+
+.header-overlay__library {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/mobile/mobile-header.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/mobile/mobile-header.jpg);
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .header-overlay__library {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/mobile/mobile-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/mobile/mobile-header@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-overlay__library {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/tablet/tablet-header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/tablet/tablet-header.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header-overlay__library {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/tablet/tablet-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/tablet/tablet-header@2x.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-overlay__library {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/desktop/desktop-header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/desktop/desktop-header.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .header-overlay__library {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url(../images/library/desktop/desktop-header@2x.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/library/desktop/desktop-header@2x.jpg);
+  }
+}
+
+.navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding-top: 41px;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 39px;
+}
+
+.menu__item--current::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+.input-wrap {
+  position: relative;
+  width: 280px;
+  margin-top: 37px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 0.5px solid var(--primary-white-color);
+}
+
+@media screen and (min-width: 768px) {
+  .input-wrap {
+    width: 336px;
+  }
+}
+
+.input-key {
+  display: block;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+  background-color: inherit;
+  border: none;
+}
+
+.input-key::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+}
+
+.input-key:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+}
+
+.input-key::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+}
+
+.input-key::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primary-white-color);
+}
+
+.input-wrap::after {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  content: '';
+  display: block;
+  background-image: url(../images/search.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+}
 /*# sourceMappingURL=main.css.map */
