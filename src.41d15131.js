@@ -2,7 +2,11 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 
 },{"./../images/home/mobile/mobile-header.jpg":[["mobile-header.babc8621.jpg","nw06"],"nw06"],"./../images/home/mobile/mobile-header@2x.jpg":[["mobile-header@2x.c5421ba4.jpg","shEI"],"shEI"],"./../images/home/tablet/tablet-header.jpg":[["tablet-header.c51d5f03.jpg","s90u"],"s90u"],"./../images/home/tablet/tablet-header@2x.jpg":[["tablet-header@2x.c54ff880.jpg","VY9S"],"VY9S"],"./../images/home/desktop/desktop-header.jpg":[["desktop-header.84477fb5.jpg","QQms"],"QQms"],"./../images/home/desktop/desktop-header@2x.jpg":[["desktop-header@2x.51e53dad.jpg","Itwu"],"Itwu"],"./../images/library/mobile/mobile-header.jpg":[["mobile-header.8832f110.jpg","Aptz"],"Aptz"],"./../images/library/mobile/mobile-header@2x.jpg":[["mobile-header@2x.ff061ff4.jpg","F0Ii"],"F0Ii"],"./../images/library/tablet/tablet-header.jpg":[["tablet-header.5226cbfd.jpg","fjfW"],"fjfW"],"./../images/library/tablet/tablet-header@2x.jpg":[["tablet-header@2x.eddb057e.jpg","zoXS"],"zoXS"],"./../images/library/desktop/desktop-header.jpg":[["desktop-header.92164057.jpg","enNQ"],"enNQ"],"./../images/library/desktop/desktop-header@2x.jpg":[["desktop-header@2x.b4116230.jpg","lZBE"],"lZBE"],"./../images/search.svg":[["search.d7c9e80a.svg","TnGF"],"TnGF"]}],"FBcu":[function(require,module,exports) {
 
-},{}],"I9BA":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/showFilms");
-},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu"}]},{},["I9BA"], null)
-//# sourceMappingURL=/team-project-js/library.f1429dda.js.map
+},{}],"U5J9":[function(require,module,exports) {
+(()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("modal-open")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)})();
+},{}],"LPrg":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchMovies=void 0;const e="d28eeb5f1e0206ee46e3ed30e2f4030f",t="https://api.themoviedb.org/3",o="/discover/movie?sort_by=popularity.desc",r=(r=1)=>fetch(`${t}${o}&api_key=${e}&page=${r}`).then(e=>{if(!e.ok)throw Error(e.statusText);return e.json()});exports.fetchMovies=r;
+},{}],"Focm":[function(require,module,exports) {
+"use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js");var e=require("./js/API/theMovieApi");(0,e.fetchMovies)().then(e=>{console.log(e)});const s=document.querySelector(".loader");function o(){s.classList.add("slow"),s.style.display="none"}window.addEventListener("load",o);
+},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/API/theMovieApi":"LPrg"}]},{},["Focm"], null)
+//# sourceMappingURL=/team-project-js/src.41d15131.js.map
