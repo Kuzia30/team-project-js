@@ -154,3 +154,13 @@
 .input-key:not(:placeholder-shown) + .label-key::after {
   opacity: 0;
 }
+
+.library__list {
+  display: flex;
+  margin-top: 45px;
+  justify-content: center;
+}
+
+.library__item:not(:last-child) {
+  margin-right: 15px;
+}
