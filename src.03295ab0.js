@@ -4,7 +4,9 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 
 },{}],"U5J9":[function(require,module,exports) {
 (()=>{const e={openModalBtn:document.querySelector("[data-modal-open]"),closeModalBtn:document.querySelector("[data-modal-close]"),modal:document.querySelector("[data-modal]")};function o(){e.modal.classList.toggle("is-hidden"),document.body.classList.toggle("modal-open")}e.openModalBtn.addEventListener("click",o),e.closeModalBtn.addEventListener("click",o)})();
+},{}],"LPrg":[function(require,module,exports) {
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchMovies=void 0;const e="d28eeb5f1e0206ee46e3ed30e2f4030f",t="https://api.themoviedb.org/3",o="/discover/movie?sort_by=popularity.desc",r=(r=1)=>fetch(`${t}${o}&api_key=${e}&page=${r}`).then(e=>{if(!e.ok)throw Error(e.statusText);return e.json()});exports.fetchMovies=r;
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js");const s=document.querySelector(".loader");function e(){s.classList.add("slow"),s.style.display="none"}window.addEventListener("load",e);
-},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-js/src.9f6da7cd.js.map
+"use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js");var e=require("./js/API/theMovieApi");(0,e.fetchMovies)().then(e=>{console.log(e)});const s=document.querySelector(".loader");function o(){s.classList.add("slow"),s.style.display="none"}window.addEventListener("load",o);
+},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/API/theMovieApi":"LPrg"}]},{},["Focm"], null)
+//# sourceMappingURL=/team-project-js/src.03295ab0.js.map
