@@ -137,7 +137,7 @@
   }
 }
 
-.input-wrap::after {
+.label-key::after {
   position: absolute;
   top: 4px;
   right: 2px;
@@ -148,4 +148,9 @@
   background-repeat: no-repeat;
   width: 12px;
   height: 12px;
+}
+
+.input-key:focus + .label-key::after,
+.input-key:not(:placeholder-shown) + .label-key::after {
+  opacity: 0;
 }
