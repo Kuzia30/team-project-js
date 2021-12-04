@@ -9,4 +9,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js");var e=require("./js/API/theMovieApi");(0,e.fetchMovies)().then(e=>{console.log(e)});const s=document.querySelector(".loader");function o(){s.classList.add("slow"),s.style.display="none"}window.addEventListener("load",o);
 },{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/API/theMovieApi":"LPrg"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-js/src.41d15131.js.map
+//# sourceMappingURL=/team-project-js/src.a4b71894.js.map
