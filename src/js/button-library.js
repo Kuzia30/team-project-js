@@ -62,10 +62,11 @@ function plugLib() {
     <ul><div class="clear-list">
     <h3 class="clear-list__title">Oops...</h3>
     <p class="clear-list__text">No movies have been added yet. Let's go pick something to your liking</p>
-    <a class="clear-list__link button-lib" href="./index.html">go to Home</a>
-</div></ul></div>`
+    <a href="./index.html"><button href="./index.html" class="button-lib" type="button">go to Home</button></a>
+    </div></ul></div>`
   );
   console.log('Твоя библиотека пуста');
   refs.gallery.insertAdjacentHTML('beforeend', clearLibrary);
   
 }
+{/* <a class="library__btn current-btn href="./index.html">go to Home</a> */}
