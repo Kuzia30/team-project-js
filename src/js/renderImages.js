@@ -1,5 +1,4 @@
 import { objGanres } from '/js/ganres';
-import { fetchMovie } from '/js/API/theMovieApi';
 
 const gallery = document.querySelector(`.gallery`);
 
@@ -34,12 +33,3 @@ export function renderImages(results) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-gallery.addEventListener('click', e => {
-  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'P') {
-    return;
-  }
-  const id = e.target.dataset.id;
-  fetchMovie(id).then(data => {
-    console.log(data);
-  });
-});
