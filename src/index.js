@@ -7,6 +7,7 @@ import { fetchMovies } from './js/API/theMovieApi';
 import fetchKeywordMovie from './js/API/keywordApi';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { debounce } from 'lodash';
+import { objGanres } from './js/ganres';
 
 fetchMovies().then(data => {
   console.log(data);
@@ -29,6 +30,16 @@ function renderImages(results) {
       const full_path = 'https://image.tmdb.org/t/p/w500/' + poster_path;
       const date = new Date(release_date);
       const yearRelease = date.getFullYear();
+      let genres = genre_ids.map(id => {
+        return objGanres[id];
+      });
+      if (genres.length > 3) {
+        const longGenresList = genres.splice(0, 2);
+        genres = longGenresList.join(', ') + ', Other';
+      } else {
+        genres = genres.join(', ');
+      }
+
       return `<div class="gallery__item">
           <img class="image-card" src="${full_path}" alt="${title}" loading="lazy"/>
           <div class="info">
@@ -36,7 +47,7 @@ function renderImages(results) {
       ${title.toUpperCase()}
     </p>
     <p class="info-item">
-      ${genre_ids} <span>|</span> ${yearRelease}
+      ${genres} <span>|</span> ${yearRelease}
     </p>
   </div></div>`;
     })
