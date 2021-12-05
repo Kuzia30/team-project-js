@@ -13,6 +13,7 @@ function onWatchedBtn(e) {
     const arrId = load('watched');
     console.log(arrId);
     if (!arrId || arrId.length === 0) {
+        refs.gallery.innerHTML = '';
       plugLib();
     } else {
         // логика если есть просмотренные фильмы
@@ -29,6 +30,7 @@ function onQueueBtn(e) {
     const arrId = load('queue');
     console.log(arrId);
     if (!arrId || arrId.length === 0) {
+        refs.gallery.innerHTML = '';
      return plugLib();
     } else {
         // логика если есть просмотренные фильмы
