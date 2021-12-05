@@ -4,6 +4,9 @@ import './js/modal-about-us.js';
 import './js/pagination.js';
 
 import { fetchMovies } from './js/API/theMovieApi';
+import fetchKeywordMovie from './js/API/keywordApi';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { debounce } from 'lodash';
 
 fetchMovies().then(data => {
   console.log(data);
@@ -40,4 +43,23 @@ function renderImages(results) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
+}
+
+const searchInputEl = document.querySelector('#key');
+
+searchInputEl.addEventListener('input', debounce(searchMovie, 500));
+
+function searchMovie(e) {
+  const searchWord = e.target.value.trim();
+  if (searchWord.length === 0) {
+    return;
+  }
+  fetchKeywordMovie(searchWord).then(data => {
+    if (data.results.length <= 0) {
+      Notify.failure('Not a found. Try again!');
+      return;
+    }
+    gallery.innerHTML = '';
+    renderImages(data.results);
+  });
 }
