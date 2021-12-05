@@ -18,9 +18,8 @@ export function renderImages(results) {
       } else {
         genres = genres.join(', ');
       }
-
-      return `<div class="gallery__item" data-id="${id}">
-          <img class="image-card" src="${full_path}" alt="${title}" data-id="${id}" loading="lazy"/>
+      return `<a class="gallery__item" href="" data-id="${id}">
+          <img class="image-card" src="${full_path}" alt="${title}" loading="lazy"/>
           <div class="info">
     <p class="info-title" data-id="${id}">
       ${title.toUpperCase()}
@@ -28,7 +27,7 @@ export function renderImages(results) {
     <p class="info-item" data-id="${id}">
       ${genres} <span>|</span> ${yearRelease}
     </p>
-  </div></div>`;
+  </div></a>`;
     })
     .join('');
 
