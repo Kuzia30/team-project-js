@@ -18,7 +18,7 @@ export function renderImages(results) {
         genres = genres.join(', ');
       }
 
-      return `<div class="gallery__item" data-id="${id}">
+      return `<a class="gallery__item" href="" data-id="${id}">
           <img class="image-card" src="${full_path}" alt="${title}" loading="lazy"/>
           <div class="info">
     <p class="info-title">
@@ -27,7 +27,7 @@ export function renderImages(results) {
     <p class="info-item">
       ${genres} <span>|</span> ${yearRelease}
     </p>
-  </div></div>`;
+  </div></a>`;
     })
     .join('');
 
