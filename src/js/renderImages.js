@@ -1,4 +1,5 @@
 import { objGanres } from '/js/ganres';
+import { fetchMovie } from '/js/API/theMovieApi';
 
 const gallery = document.querySelector(`.gallery`);
 
@@ -17,14 +18,13 @@ export function renderImages(results) {
       } else {
         genres = genres.join(', ');
       }
-
       return `<a class="gallery__item" href="" data-id="${id}">
           <img class="image-card" src="${full_path}" alt="${title}" loading="lazy"/>
           <div class="info">
-    <p class="info-title">
+    <p class="info-title" data-id="${id}">
       ${title.toUpperCase()}
     </p>
-    <p class="info-item">
+    <p class="info-item" data-id="${id}">
       ${genres} <span>|</span> ${yearRelease}
     </p>
   </div></a>`;
@@ -33,3 +33,13 @@ export function renderImages(results) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
+
+gallery.addEventListener('click', e => {
+  if (e.target.nodeName !== 'IMG' && e.target.nodeName !== 'P') {
+    return;
+  }
+  const id = e.target.dataset.id;
+  fetchMovie(id).then(data => {
+    console.log(data);
+  });
+});
