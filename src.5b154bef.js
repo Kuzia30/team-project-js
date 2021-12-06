@@ -49,4 +49,4 @@ var n,t=arguments[3],r=require("buffer").Buffer;(function(){var r,e=200,u="Unsup
 },{"./API/theMovieApi":"LPrg","./refs":"VyiV","./renderOneMovie":"LFXu","./renderImages":"Vsw3"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/pagination.js"),require("./js/searchInput"),require("./js/loader"),require("./js/details"),require("./js/renderOneMovie");var e=require("./js/API/theMovieApi"),r=require("./js/renderImages");(0,e.fetchMovies)().then(e=>{console.log(e),(0,r.renderImages)(e.results)});
 },{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/pagination.js":"o8lo","./js/searchInput":"AJiI","./js/loader":"vQE2","./js/details":"C5An","./js/renderOneMovie":"LFXu","./js/API/theMovieApi":"LPrg","./js/renderImages":"Vsw3"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-js/src.841699b1.js.map
+//# sourceMappingURL=/team-project-js/src.5b154bef.js.map
