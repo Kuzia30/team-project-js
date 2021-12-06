@@ -9,6 +9,11 @@ export default {
   //library-header
   watchedBtn: document.querySelector('.watched-js'),
   queueBtn: document.querySelector('.queue-js'),
+  collection: document.querySelector('.collection'),
+  cardsContainerRef: document.querySelector('.js-card-container'),
+  libraryRef: document.querySelector('.js-library'),
+  //pagination
+  pagination: document.querySelector('.tui-pagination'),
   // pop-up about film
   backdrop: document.querySelector('.backdrop'),
   closeBtn: document.querySelector('.pop-up__close-btn'),
