@@ -13,7 +13,7 @@
 .pop-up {
   background-color: var(--primary-white-color);
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 280px;
@@ -64,12 +64,14 @@
     width: 240px;
     height: 356px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-color: rgba(235, 215, 206, 0.5);
     margin-bottom: 30px;
     @media screen and (min-width: 768px) {
       width: 264px;
       height: 374px;
       margin-bottom: 0;
+      margin-right: 30px;
     }
     @media screen and (min-width: 1024px) {
       width: 396px;
@@ -178,7 +180,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
-    height: 236px;
+    // height: 236px;
     overflow: auto;
     @media screen and (min-width: 1024px) {
       height: 160px;
