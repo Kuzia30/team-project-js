@@ -5,3 +5,4 @@ import './js/modal-about-us.js';
 import './js/localStorage';
 import './js/button-library';
 import './js/loader';
+import 'animate.css';
