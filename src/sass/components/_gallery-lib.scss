@@ -1,0 +1,98 @@
+.movies {
+  margin-bottom: 45px;
+}
+.card__container {
+  margin-bottom: -20px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+    margin-bottom: -30px;
+  }
+}
+
+.movie {
+  margin-bottom: 20px;
+  width: 280px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 60px) / 2);
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1024px) {
+    flex-basis: calc((100% - 90px) / 3);
+  }
+
+  &::after {
+    content: '';
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+
+  &__imgBox {
+    background-position: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    overflow: hidden;
+    height: 402px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    @media screen and (min-width: 768px) {
+      height: 398px;
+    }
+  }
+
+  &__img {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__infoBox {
+    padding: 10px 5px;
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    line-height: 1.167;
+    text-transform: uppercase;
+    color: #000000;
+
+    @media screen and (min-width: 769px) {
+      line-height: 1.333;
+    }
+  }
+
+  &__info {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.333;
+    color: #ff6b08;
+  }
+}

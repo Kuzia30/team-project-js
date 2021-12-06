@@ -1,59 +1,44 @@
 import refs from './refs';
-import { load, save, remove } from './localStorage';
+import {renderMovieCardLibrary} from './render-movie-card';
+import API from './API/libraryApi';
+// import { renderImages } from './renderImages';
+import LocalStorService from './localStorage';
+const localStorService = new LocalStorService();
+// import { fetchMovie } from './API/theMovieApi';
 
 refs.watchedBtn.addEventListener('click', onWatchedBtn);
 refs.queueBtn.addEventListener('click', onQueueBtn);
-renderAllList();
+refs.libraryRef.addEventListener('click', onLibraryClick);
+
+const getMovies = new API();
+let queueList = [];
+let watchedList = [];
+
+showWatchedFilms();
+
+function onLibraryClick(e) {
+  e.preventDefault();
+  refs.gallery.innerHTML = '';
+}
+
 function onWatchedBtn(e) {
     e.preventDefault();
     console.log('click wathed');
     refs.queueBtn.classList.remove('current-btn');
     refs.watchedBtn.classList.add('current-btn');
-    
-    const arrId = load('watched');
-    console.log(arrId);
-    if (!arrId || arrId.length === 0) {
-        refs.gallery.innerHTML = '';
-      plugLib();
-    } else {
-        // логика если есть просмотренные фильмы
-        console.log('у тебя есть просмотренные фильмы');
-        }
+    refs.gallery.innerHTML = '';
+  showWatchedFilms();
+    console.log('у тебя есть просмотренные фильмы');
+  
     }
 
 function onQueueBtn(e) {
     e.preventDefault();
     refs.queueBtn.classList.add('current-btn');
     refs.watchedBtn.classList.remove('current-btn');
-    console.log('click queue');
-
-    const arrId = load('queue');
-    console.log(arrId);
-    if (!arrId || arrId.length === 0) {
-        refs.gallery.innerHTML = '';
-     return plugLib();
-    } else {
-        // логика если есть просмотренные фильмы
-        console.log('у тебя есть очередь просмотра');
-        }
-}
-
-function renderAllList() {
-  refs.gallery.innerHTML = '';
-  let arrWatchId = [];
-  let arrQueueId = [];
-  if (load('watched')) {
-    arrWatchId = load('watched');
-  }
-  if (load('queue')) {
-    arrQueueId = load('queue');
-  }
- 
-  if (arrWatchId.length === 0 && arrQueueId.length === 0) {
-   return plugLib();
-  } else {
-    
-  }
+    refs.gallery.innerHTML = '';
+  showQueue();
+  console.log('у тебя есть очередь просмотра');
 }
 
 function plugLib() {
@@ -61,12 +46,62 @@ function plugLib() {
     `<div class="container">
     <ul><div class="clear-list">
     <h3 class="clear-list__title">Oops...</h3>
-    <p class="clear-list__text">No movies have been added yet. Let's go pick something to your liking</p>
-    <a href="./index.html"><button href="./index.html" class="button-lib" type="button">go to Home</button></a>
+    <p class="clear-list__text">Your movie list is empty!</p>
+    <a href="./index.html"><button href="./index.html" class="button-lib" type="button">Back to Homepage</button></a>
     </div></ul></div>`
   );
   console.log('Твоя библиотека пуста');
   refs.gallery.insertAdjacentHTML('beforeend', clearLibrary);
-  
 }
-{/* <a class="library__btn current-btn href="./index.html">go to Home</a> */}
+
+export function showWatchedFilms() {
+  let array = localStorService.getFromWatchedLS();
+  if (!array || array.length === 0) {
+    // Если LocalStorage пуст делаем заглушку и прячем пагинацию
+    plugLib()
+    refs.pagination.classList.add('visually-hidden');
+    return;
+  }
+  refs.cardsContainerRef.innerHTML = '';
+  refs.pagination.classList.remove('visually-hidden');
+      getWatchedList().forEach(movie => {
+    getMovies.getMovieByIdForLibrary(movie)
+      .then(renderMovieCardLibrary);
+  });
+}
+
+export function showQueue() {
+  let array = localStorService.getQueueLS();
+  if (!array || array.length === 0) {
+    // Если LocalStorage делаем заглушку и прячем пагинацию
+    plugLib()
+    refs.pagination.classList.add('visually-hidden');
+    return;
+  }
+  refs.cardsContainerRef.innerHTML = '';
+  refs.pagination.classList.remove('visually-hidden');
+  
+  getQueueList().forEach(movie => {
+    getMovies.getMovieByIdForLibrary(movie)
+      .then(renderMovieCardLibrary);
+  });
+}
+
+function getQueueList() {
+     if (!(localStorage.getItem('Queue')) || JSON.parse(localStorage.getItem('Queue')).length === 0 ) {
+      console.log('empty');
+      return [];
+    } else {
+      return queueList = JSON.parse(localStorage.getItem('Queue'));
+    }
+}
+
+function getWatchedList() {
+      if (!(localStorage.getItem('Watched')) || JSON.parse(localStorage.getItem('Watched')).length === 0 ) {
+      console.log('empty');
+      return [];
+    } else {
+      return watchedList = JSON.parse(localStorage.getItem('Watched'));
+    }
+    
+};
