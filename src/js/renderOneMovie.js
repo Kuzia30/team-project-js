@@ -1,6 +1,4 @@
-// import { fetchMovie } from './API/theMovieApi';
 import refs from './refs';
-// import { fetchMovies } from './API/theMovieApi';
 
 export function openMovieWindow({
   title,
@@ -75,6 +73,6 @@ export function openMovieWindow({
           </div>
         </div>
         `;
-  // refs.movieDetailsContainer.innerHTML = aboutMovieMarkup;
-  refs.movieDetailsContainer.insertAdjacentHTML('beforeend', aboutMovieMarkup);
+  refs.movieDetailsContainer.innerHTML = aboutMovieMarkup;
+  //   refs.movieDetailsContainer.insertAdjacentHTML('beforeend', aboutMovieMarkup);
 }

@@ -172,6 +172,7 @@
 
 .about {
   margin-bottom: 20px;
+
   &__title {
     font-weight: 500;
     font-size: 12px;
@@ -185,10 +186,13 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
-    // height: 236px;
+    max-height: 200px;
     overflow: auto;
+    @media screen and (min-width: 768px) {
+      max-height: 180px;
+    }
     @media screen and (min-width: 1024px) {
-      height: 160px;
+      max-height: 220px;
     }
   }
 }
