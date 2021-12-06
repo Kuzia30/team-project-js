@@ -13,17 +13,22 @@
 .pop-up {
   background-color: var(--primary-white-color);
   position: absolute;
-  top: 60%;
+  top: 20px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   width: 280px;
   padding: 48px 20px 40px;
   @media screen and (min-width: 768px) {
-    min-width: 618px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 618px;
+    // height: 562px;
     padding: 42px 30px 40px;
   }
   @media screen and (min-width: 1024px) {
     min-width: 882px;
+    // height: 568px;
     padding: 50px 30px 40px;
   }
 
