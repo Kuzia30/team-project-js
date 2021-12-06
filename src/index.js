@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import './js/showFilms';
 import './js/modal-about-us.js';
+import 'animate.css';
 
 import { fetchMovies } from './js/API/theMovieApi';
 
