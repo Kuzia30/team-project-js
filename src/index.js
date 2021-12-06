@@ -1,19 +1,20 @@
 import './sass/main.scss';
 import './js/showFilms';
 import './js/modal-about-us.js';
+
 import 'animate.css';
 
+import './js/pagination.js';
+import './js/searchInput';
+import './js/loader';
+import './js/details';
+import './js/renderOneMovie';
+
+
 import { fetchMovies } from './js/API/theMovieApi';
+import { renderImages } from './js/renderImages';
 
 fetchMovies().then(data => {
   console.log(data);
+  renderImages(data.results);
 });
-
-const loader = document.querySelector(`.loader`);
-window.addEventListener(`load`, stopScrolling);
-
-function stopScrolling() {
-  loader.classList.add(`slow`);
-  loader.style.display = `none`;
-}
-

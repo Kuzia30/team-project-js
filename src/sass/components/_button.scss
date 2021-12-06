@@ -16,9 +16,54 @@
   @media screen and (min-width: 768px) {
     width: 136px;
   }
+  &:hover,
+  &:focus {
+    border-color: #ff6b08;
+  }
+}
+
+.pop-up-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1024px) {
+    justify-content: start;
+    &__items:first-child {
+      margin-right: 15px;
+    }
+  }
+}
+
+.pop-up-btn {
+  width: 112px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-transform: uppercase;
+
+  color: var(--primary-text-color);
+  background-color: var(--primary-white-color);
+  border: 1px solid var(--primary-text-color);
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 125px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: #ff6b08;
+  }
 }
 
 .current-btn {
   border: none;
   background-color: var(--accent-color);
+  color: var(--primary-white-color);
 }

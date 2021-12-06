@@ -1,0 +1,84 @@
+// Breakpoints
+$mobile: 320px;
+$to-tablet: 767px;
+$tablet: 768px;
+$to-desktop: 1023px;
+$desktop: 1024px;
+
+.clear-list {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  justify-content: center;
+
+  &__title {
+    color: var(--accent-color);
+    line-height: 1.17;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      line-height: 1.24;
+      font-size: 30px;
+      margin-bottom: 20px;
+      @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.27px;
+      }
+    }
+  }
+
+  &__text {
+    // color: black;
+    margin-bottom: 15px;
+    font-size: 16px;
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.19px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 1.21px;
+    }
+  }
+
+  &__link {
+    margin-bottom: 15px;
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.button-lib {
+  width: 129px;
+  height: 44px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  opacity: 0.6;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    width: 136px;
+  }
+  &:hover,
+  &:focus {
+    border: none;
+    opacity: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
