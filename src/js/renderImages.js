@@ -7,7 +7,10 @@ export function renderImages(results) {
     .map(({ poster_path, id, title, genre_ids, release_date }) => {
       const full_path = 'https://image.tmdb.org/t/p/w500/' + poster_path;
       const date = new Date(release_date);
-      const yearRelease = date.getFullYear();
+      let yearRelease = date.getFullYear();
+      if (Number.isNaN(yearRelease)) {
+        yearRelease = 'Unknown';
+      }
       let genres = genre_ids.map(id => {
         return objGanres[id];
       });
@@ -32,4 +35,3 @@ export function renderImages(results) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 }
-
