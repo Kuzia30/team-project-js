@@ -33,5 +33,5 @@ export function renderImages(results) {
     })
     .join('');
 
-  gallery.insertAdjacentHTML('beforeend', markup);
+  gallery.innerHTML =  markup;
 }
