@@ -116,19 +116,22 @@
   font-weight: 500;
   line-height: 1.33;
   &__keys {
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
     width: 108px;
     @media screen and (min-width: 1024px) {
       width: 152px;
     }
   }
   &__values {
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
     width: 108px;
     @media screen and (min-width: 1024px) {
       width: 152px;
     }
   }
+}
+.value {
+  color: var(--primary-text-color);
 }
 
 .vote-value {
@@ -154,6 +157,7 @@
     // height: 16px;
     background: var(--footer-grey-color);
     border-radius: 5px;
+    color: var(--rating-color);
   }
 }
 
@@ -167,10 +171,6 @@
 
 .title-value {
   text-transform: uppercase;
-}
-
-.value {
-  color: var(--primary-text-color);
 }
 
 .about {

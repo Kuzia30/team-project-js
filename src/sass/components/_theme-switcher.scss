@@ -1,0 +1,97 @@
+body.dark-theme {
+  --primary-text-color: #ffffff; // основной текст
+  --primary-white-color: #545454; // текст белого фона
+  --rating-color: #000000;
+  transition: background-color 250 var(--timing-function);
+}
+body.ligth-theme {
+  --main-font: Roboto, sans-serif;
+
+  --accent-color: #ff6b08; //подчеркивание текущей страницы, выделение жанра, года, пагинация, футтер сердечко
+  --primary-text-color: #000000; // основной текст
+  --secondary-text-color: #545454; //текст с футера и карточек описания
+  --footer-grey-color: #f7f7f7; //цвет футера
+  --primary-white-color: #ffffff; // текст белого фона
+  --rating-color: #000000;
+}
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch__icon {
+  color: var(--static-white-color);
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.theme-switch__control {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 32px;
+  height: 16px;
+  border-radius: 50em;
+  padding: 2px 0;
+}
+
+.theme-switch__toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.theme-switch__track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  user-select: none;
+  background-color: #333;
+  border-radius: inherit;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.theme-switch__marker {
+  position: relative;
+  background-color: #fff;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  transform: translateX(3px);
+  transition: transform 250ms var(--timing-function);
+}
+
+.theme-switch__toggle:checked + .theme-switch__track {
+  background-color: #d3d3d4;
+}
+
+.theme-switch__toggle:checked ~ .theme-switch__marker {
+  transform: translateX(18px);
+}
+
+.theme-switch__toggle:focus + .theme-switch__track,
+.theme-switch__toggle:active + .theme-switch__track {
+  box-shadow: 0 0 0 3px #2196f3;
+}
