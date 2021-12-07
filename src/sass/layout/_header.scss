@@ -89,7 +89,7 @@
   line-height: 1.17;
   text-transform: uppercase;
 
-  color: var(--primary-white-color);
+  color: var(--static-white-color);
 }
 
 .menu__item:not(:last-child) {
@@ -113,7 +113,7 @@
   margin-left: auto;
   margin-right: auto;
 
-  border-bottom: 0.5px solid var(--primary-white-color);
+  border-bottom: 0.5px solid var(--static-white-color);
 }
 
 .input-key {
@@ -124,7 +124,7 @@
   font-size: 14px;
   line-height: 1.14;
 
-  color: var(--primary-white-color);
+  color: var(--static-white-color);
 
   background-color: inherit;
   border: none;
@@ -133,7 +133,7 @@
     font-size: 14px;
     line-height: 1.14;
 
-    color: var(--primary-white-color);
+    color: var(--static-white-color);
   }
 }
 

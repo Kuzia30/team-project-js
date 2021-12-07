@@ -7,6 +7,7 @@ import './js/loader';
 import './js/details';
 import './js/renderOneMovie';
 import 'animate.css';
+import './js/themeSwitcher';
 
 import { fetchMovies } from './js/API/theMovieApi';
 import { renderImages } from './js/renderImages';
