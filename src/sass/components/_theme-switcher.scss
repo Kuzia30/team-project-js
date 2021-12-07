@@ -2,6 +2,7 @@ body.dark-theme {
   --primary-text-color: #ffffff; // основной текст
   --primary-white-color: #545454; // текст белого фона
   --rating-color: #000000;
+  transition: background-color 250 var(--timing-function);
 }
 body.ligth-theme {
   --main-font: Roboto, sans-serif;
