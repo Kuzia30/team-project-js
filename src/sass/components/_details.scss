@@ -54,6 +54,9 @@
     &:focus {
       fill: var(--accent-color);
       outline: none;
+      animation-duration: 500ms;
+      animation-iteration-count: infinite;
+      animation-delay: none;
     }
   }
 
