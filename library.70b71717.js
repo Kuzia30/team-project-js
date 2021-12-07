@@ -26,7 +26,9 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.loader=void 0;const e=document.querySelector(".loader");function o(){e.classList.add("slow"),e.style.display="none"}exports.loader=e,window.addEventListener("load",o);
 },{}],"TOx8":[function(require,module,exports) {
 
+},{}],"qgSZ":[function(require,module,exports) {
+const e=document.querySelector("#theme-switch-toggle"),t={LIGHT:"light-theme",DARK:"dark-theme"};function c(e){e.target.checked?(d(),localStorage.setItem("ui-theme","dark")):(o(),localStorage.setItem("ui-theme","light"))}function o(){document.body.classList.add(t.LIGHT),document.body.classList.remove(t.DARK)}function d(){document.body.classList.add(t.DARK),document.body.classList.remove(t.LIGHT)}"light"===localStorage.getItem("ui-theme")?(e.checked=!1,o()):"dark"===localStorage.getItem("ui-theme")&&(e.checked=!0,d()),e.addEventListener("click",c);
 },{}],"I9BA":[function(require,module,exports) {
-"use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/localStorage"),require("./js/button-library"),require("./js/loader"),require("animate.css");
-},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/localStorage":"nnQC","./js/button-library":"Q6MZ","./js/loader":"vQE2","animate.css":"TOx8"}]},{},["I9BA"], null)
-//# sourceMappingURL=/team-project-js/library.75d775fb.js.map
+"use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/localStorage"),require("./js/button-library"),require("./js/loader"),require("animate.css"),require("./js/themeSwitcher");
+},{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/localStorage":"nnQC","./js/button-library":"Q6MZ","./js/loader":"vQE2","animate.css":"TOx8","./js/themeSwitcher":"qgSZ"}]},{},["I9BA"], null)
+//# sourceMappingURL=/team-project-js/library.70b71717.js.map
