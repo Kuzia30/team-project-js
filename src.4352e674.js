@@ -51,4 +51,4 @@ var n,t=arguments[3],r=require("buffer").Buffer;(function(){var r,e=200,u="Unsup
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/pagination.js"),require("./js/searchInput"),require("./js/loader"),require("./js/details"),require("./js/renderOneMovie"),require("animate.css");var e=require("./js/API/theMovieApi"),r=require("./js/renderImages");(0,e.fetchMovies)().then(e=>{console.log(e),(0,r.renderImages)(e.results)});
 },{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/pagination.js":"o8lo","./js/searchInput":"AJiI","./js/loader":"vQE2","./js/details":"C5An","./js/renderOneMovie":"LFXu","animate.css":"TOx8","./js/API/theMovieApi":"LPrg","./js/renderImages":"Vsw3"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-js/src.65a37d60.js.map
+//# sourceMappingURL=/team-project-js/src.4352e674.js.map
