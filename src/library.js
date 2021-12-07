@@ -6,3 +6,4 @@ import './js/localStorage';
 import './js/button-library';
 import './js/loader';
 import 'animate.css';
+import './js/themeSwitcher';

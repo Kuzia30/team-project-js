@@ -7,7 +7,7 @@
 
   text-transform: uppercase;
 
-  color: var(--primary-white-color);
+  color: var(--static-white-color);
   background-color: inherit;
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -65,5 +65,5 @@
 .current-btn {
   border: none;
   background-color: var(--accent-color);
-  color: var(--primary-white-color);
+  color: var(--static-white-color);
 }
