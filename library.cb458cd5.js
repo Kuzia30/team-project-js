@@ -40,4 +40,4 @@ const e=document.querySelector("#theme-switch-toggle"),t={LIGHT:"light-theme",DA
 },{"./API/theMovieApi":"LPrg","./refs":"VyiV","./renderOneMovie":"LFXu","./localStorage":"nnQC","./render-movie-card":"GFXJ"}],"I9BA":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/pagination.js"),require("./js/localStorage"),require("./js/button-library"),require("./js/loader"),require("animate.css"),require("./js/themeSwitcher"),require("./js/renderOneMovie"),require("./js/details");
 },{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/pagination.js":"o8lo","./js/localStorage":"nnQC","./js/button-library":"Q6MZ","./js/loader":"vQE2","animate.css":"TOx8","./js/themeSwitcher":"qgSZ","./js/renderOneMovie":"LFXu","./js/details":"C5An"}]},{},["I9BA"], null)
-//# sourceMappingURL=/team-project-js/library.fda42013.js.map
+//# sourceMappingURL=/team-project-js/library.cb458cd5.js.map
