@@ -9,10 +9,3 @@ import 'animate.css';
 import './js/themeSwitcher';
 import './js/renderOneMovie'
 import './js/details';
-import { fetchMovies } from './js/API/theMovieApi';
-import { renderImages } from './js/renderImages';
-
-fetchMovies().then(data => {
-  console.log(data);
-  renderImages(data.results);
-});

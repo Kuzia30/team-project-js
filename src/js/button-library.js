@@ -1,10 +1,8 @@
 import refs from './refs';
 import {renderMovieCardLibrary} from './render-movie-card';
 import API from './API/libraryApi';
-// import { renderImages } from './renderImages';
 import LocalStorService from './localStorage';
 const localStorService = new LocalStorService();
-// import { fetchMovie } from './API/theMovieApi';
 
 refs.watchedBtn.addEventListener('click', onWatchedBtn);
 refs.queueBtn.addEventListener('click', onQueueBtn);
@@ -14,7 +12,7 @@ const getMovies = new API();
 let queueList = [];
 let watchedList = [];
 
-// showWatchedFilms();
+showWatchedFilms();
 function onLibraryClick(e) {
   e.preventDefault();
   // refs.gallery.innerHTML = '';
