@@ -75,5 +75,4 @@ export function openMovieWindow({
         </div>
         `;
   refs.movieDetailsContainer.innerHTML = aboutMovieMarkup;
-  //   refs.movieDetailsContainer.insertAdjacentHTML('beforeend', aboutMovieMarkup);
 }
