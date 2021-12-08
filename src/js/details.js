@@ -196,6 +196,7 @@ refs.gallery.addEventListener('click', e => {
 
 function closeMovieWindow() {
   refs.backdrop.classList.add('visually-hidden');
+  refs.body.classList.remove('overflow-hidden');
   // refs.closeBtn.removeEventListener('click', closeMovieWindow);
   // refs.closeBtnMobile.removeEventListener('click', closeMovieWindow);
 }
