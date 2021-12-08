@@ -11,8 +11,23 @@ import './js/themeSwitcher';
 import './js/localStorage';
 import { fetchMovies } from './js/API/theMovieApi';
 import { renderImages } from './js/renderImages';
+import { pagination } from './js/pagination'
+const pagin = pagination();
+const page = pagin.getCurrentPage();
 
-fetchMovies().then(data => {
-  console.log(data);
-  renderImages(data.results);
-});
+
+fetchMovies(page).then(data => ({
+    itemsFilm: data.results,
+    total: data.total_pages,
+})).then(({ itemsFilm, total }) => {
+  renderImages(itemsFilm)
+  pagin.reset(total)
+ });
+
+pagin.on('afterMove', ({ page }) => {
+  fetchMovies(page).then(data => ({
+    itemsFilm: data.results,
+  })).then(({ itemsFilm }) => {
+    renderImages(itemsFilm)
+  });
+ });
