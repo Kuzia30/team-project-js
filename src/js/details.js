@@ -1,15 +1,8 @@
 import { fetchMovie } from './API/theMovieApi';
 import refs from './refs';
-import { fetchMovies } from './API/theMovieApi';
 import { openMovieWindow } from './renderOneMovie';
-import { renderImages } from './renderImages';
 import { load, save, remove } from './localStorage';
 import {} from './render-movie-card';
-
-fetchMovies().then(data => {
-  //   console.log(data);
-  renderImages(data.results);
-});
 
 refs.gallery.addEventListener('click', e => {
   e.preventDefault();
