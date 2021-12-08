@@ -63,4 +63,4 @@ const e=document.querySelector("#theme-switch-toggle"),t={LIGHT:"light-theme",DA
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/showFilms"),require("./js/modal-about-us.js"),require("./js/pagination.js"),require("./js/searchInput"),require("./js/loader"),require("./js/details"),require("./js/renderOneMovie"),require("animate.css"),require("./js/themeSwitcher"),require("./js/localStorage");var e=require("./js/API/theMovieApi"),r=require("./js/renderImages");(0,e.fetchMovies)().then(e=>{console.log(e),(0,r.renderImages)(e.results)});
 },{"./sass/main.scss":"clu1","./js/showFilms":"FBcu","./js/modal-about-us.js":"U5J9","./js/pagination.js":"o8lo","./js/searchInput":"AJiI","./js/loader":"vQE2","./js/details":"C5An","./js/renderOneMovie":"LFXu","animate.css":"TOx8","./js/themeSwitcher":"qgSZ","./js/localStorage":"nnQC","./js/API/theMovieApi":"LPrg","./js/renderImages":"Vsw3"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-js/src.65340fc8.js.map
+//# sourceMappingURL=/team-project-js/src.aa736d3c.js.map
