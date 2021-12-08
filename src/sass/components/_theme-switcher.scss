@@ -1,8 +1,12 @@
+body {
+  transition: background-color 250ms var(--timing-function);
+}
 body.dark-theme {
   --primary-text-color: #ffffff; // основной текст
   --primary-white-color: #545454; // текст белого фона
+  --secondary-text-color: #ffffff;
   --rating-color: #000000;
-  transition: background-color 250 var(--timing-function);
+  --footer-grey-color: #1e2f2f; //цвет футера
 }
 body.ligth-theme {
   --main-font: Roboto, sans-serif;

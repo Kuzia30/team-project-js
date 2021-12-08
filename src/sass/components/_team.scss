@@ -19,25 +19,23 @@
   top: 50%;
   left: 50%;
   width: 320px;
-  
-  background: white;
+
+  background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
- @media screen and (max-width: 767px) {
-   overflow-y: scroll;
-height: 80%;
+  @media screen and (max-width: 767px) {
+    overflow-y: scroll;
+    height: 80%;
   }
   @media screen and (min-width: 768px) {
-   
-      width:80%;
+    width: 80%;
   }
   @media screen and (min-width: 1023px) {
-     
-      width: 882px;
+    width: 882px;
   }
 }
 .backdrop_command .modal_command {
@@ -61,16 +59,15 @@ height: 80%;
   background-repeat: no-repeat;
   cursor: pointer;
   border: none;
-   &:hover,
-    &:focus {
-      fill: var(--accent-color);
-      outline: none;
-    }
-    @media screen and (max-width: 767px) {
+  &:hover,
+  &:focus {
+    fill: var(--accent-color);
+    outline: none;
+  }
+  @media screen and (max-width: 767px) {
     top: -5px;
-   right: -12px;
-}
- 
+    right: -12px;
+  }
 }
 .overlay__command {
   position: absolute;
@@ -83,7 +80,7 @@ height: 80%;
 .content__command {
   margin: 0 auto;
   position: relative;
-  background-color: #ffffff;
+  background-color: var(--primary-white-color);
   max-width: 760px;
   top: 3%;
 }
@@ -98,39 +95,29 @@ height: 80%;
 @media screen and (max-width: 767px) {
   .content__command {
     max-width: 320px;
-     
   }
 }
 .list-command {
-//  padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
+  //  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
 
-@media screen and (min-width: 1023px) {
- 
+  @media screen and (min-width: 1023px) {
     min-width: 150px;
-    
-  
-}
-
-
- 
+  }
 }
 .item-command {
   width: auto;
   margin-bottom: 0px;
- @media screen and (min-width: 768px) {
-  
-     margin-right:10px ;
+  @media screen and (min-width: 768px) {
+    margin-right: 10px;
   }
   @media screen and (min-width: 1023px) {
-     margin-right: 5px;
+    margin-right: 5px;
   }
-
 }
-
 
 .command-item__link {
   display: block;
