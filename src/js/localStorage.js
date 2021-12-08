@@ -1,92 +1,5 @@
-import { fetchMovie } from './API/theMovieApi';
-
 export default class LocalStorService {
-  constructor() {
-    if (JSON.parse(localStorage.getItem('Watched'))) {
-      let watchedArray = JSON.parse(localStorage.getItem('Watched'));
-      this.watchedArray = watchedArray;
-    } else {
-      this.watchedArray = [];
-    }
-
-    if (JSON.parse(localStorage.getItem('Queue'))) {
-      let queueArray = JSON.parse(localStorage.getItem('Queue'));
-      this.queueArray = queueArray;
-    } else {
-      this.queueArray = [];
-    }
-
-    this.id = 0;
-  }
-
-  set currentID(movieId) {
-    return (this.id = movieId);
-  }
-
-  get currentID() {
-    return this.id;
-  }
-
-  // добавить фильм в Watched
-  async setWatchedToStorage() {
-    const object = await fetchMovie(this.id);
-
-    const info = renderImages(object);
-
-    this.watchedArray.unshift(info);
-    try {
-      localStorage.setItem('Watched', JSON.stringify(this.watchedArray));
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  //Удалить фильм из списка просмотренных
-  delFromWatched() {
-    let array = this.getFromWatchedLS();
-
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].id === this.id) {
-        array.splice(i, 1);
-      }
-    }
-    this.watchedArray = array;
-    try {
-      localStorage.setItem('Watched', JSON.stringify(this.watchedArray));
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  // добавить фильм в Queue
-  async setQueueToStorage() {
-    const array = await fetchMovie(this.id);
-    const info = renderImages(array);
-    this.queueArray.unshift(info);
-    try {
-      localStorage.setItem('Queue', JSON.stringify(this.queueArray));
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  //Удалить фильм из списка очереди
-  delFromQueue() {
-    let array = this.getQueueLS();
-
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].id === this.id) {
-        array.splice(i, 1);
-      }
-    }
-    this.queueArray = array;
-    try {
-      localStorage.setItem('Queue', JSON.stringify(this.queueArray));
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
+  
   // Получить массив объектов из списка Watched
   getFromWatchedLS() {
     try {
@@ -107,3 +20,35 @@ export default class LocalStorService {
     }
   }
 }
+
+ // Принимает ключ `key` по которому будет произведена выборка.
+const load = key => {
+  try {
+    let serializedState = localStorage.getItem(key);
+
+    return (serializedState = JSON.parse(serializedState) || undefined);
+  } catch (err) {
+    console.error('Get state error: ', err);
+  }
+};
+
+// Принимает ключ `key` и значение `value`.
+const save = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+    localStorage.setItem(key, serializedState);
+  } catch (err) {
+    console.error('Set state error: ', err);
+  }
+};
+
+// Принимает ключ `key`
+const remove = key => {
+  try {
+    localStorage.removeItem(key);
+  } catch (err) {
+    console.error('Remove state error: ', err);
+  }
+};
+
+export { load, save, remove };

@@ -60,12 +60,12 @@ export function openMovieWindow({
               </div>
               <ul class="pop-up-buttons">
                   <li class="pop-up-buttons__items">
-                      <button class="pop-up-btn current-btn" type="button" data-watched>
+                      <button class="pop-up-btn js-watched" type="button" data-watched>
                           add to watched
                       </button>
                   </li>
                   <li class="pop-up-buttons__items">
-                      <button class="pop-up-btn" type="button" data-queue>
+                      <button class="pop-up-btn js-queue" type="button" data-queue>
                           add to queue
                       </button>
                   </li>
