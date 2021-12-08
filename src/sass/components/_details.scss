@@ -133,9 +133,6 @@
     }
   }
 }
-.value {
-  color: var(--primary-text-color);
-}
 
 .vote-value {
   display: flex;
@@ -162,6 +159,9 @@
     border-radius: 5px;
     color: var(--rating-color);
   }
+}
+.value {
+  color: var(--primary-text-color);
 }
 
 .popularity-value {
