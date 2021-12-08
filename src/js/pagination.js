@@ -1,11 +1,10 @@
 import Pagination from 'tui-pagination';
-import { fetchMovies } from './API/theMovieApi';
-import fetchKeywordMovie from './API/keywordApi';
-import { renderImages } from './renderImages';
 import refs from './refs';
-const container = document.getElementById('pagination');
 
+
+export function pagination(params = {}) {
 const options = {
+  totalItems: 1000,
   itemsPerPage: 9,
   visiblePages: 5,
   page: 1,
@@ -16,7 +15,7 @@ const options = {
     page: `<a href="#" class="tui-page-btn">{{page}}</a>`,
     currentPage: `<strong class="tui-page-btn tui-is-selected">{{page}}</strong>`,
     moveButton:
-      `<a href="#" class="tui-page-btn tui-{{type}}">` +
+    `<a href="#" class="tui-page-btn tui-{{type}}">` +
         `<span class="tui-ico-{{type}}">{{type}}</span>` +
       `</a>`,
     disabledMoveButton:
@@ -29,24 +28,6 @@ const options = {
       `</a>`
   }
 };
+  return new Pagination(refs.pagination, {...options, ...params});
+}
 
-const pagination = new Pagination(container, options);
-const page = pagination.getCurrentPage();
-
-
-fetchMovies(page).then(data => ({
-    itemsFilm: data.results,
-    total: data.total_results,
-})).then(({ itemsFilm, total }) => {
-  renderImages(itemsFilm)
-  console.log(total);
-  pagination.reset(total)
- });
-
-pagination.on('afterMove', ({ page }) => {
-  fetchMovies(page).then(data => ({
-    itemsFilm: data.results,
-  })).then(({ itemsFilm }) => {
-    renderImages(itemsFilm)
-  });
- });
