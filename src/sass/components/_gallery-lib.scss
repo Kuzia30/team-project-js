@@ -90,9 +90,16 @@
   }
 
   &__info {
-    font-size: 12px;
+    display: inline;
+    font-size: 14px;
     font-weight: 500;
     line-height: 1.333;
     color: #ff6b08;
+  }
+  &__average {
+    background-color: #ff6b08;
+    color: white;
+    padding: 1px 6px;
+    border-radius: 5px;
   }
 }

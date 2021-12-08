@@ -11,12 +11,14 @@ export default class moviesApiService {
     return fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
       .then(r => r.json())
       .then(({ ...results }) => {
-          results.vote_average = results.vote_average ? this.getVote(results.vote_average) : '';//рейтинг не рисуеться
+          results.vote_average = results.vote_average ? this.getVote(results.vote_average) : '';
           results.release_date = results.release_date ? this.getCuttedDate(results.release_date) : '';
         (results.title = results.title ? this.getCuttedName(results.title) : ''),
-        (results.genres = results.genres ? this.getGenreNameForLibrary(results.genres) : []);
+          (results.genres = results.genres ? this.getGenreNameForLibrary(results.genres) : []);
+        console.log(results);
         return results;
       });
+   
 };
 
   getVote(string) {

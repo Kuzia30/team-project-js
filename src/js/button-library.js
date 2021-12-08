@@ -14,11 +14,13 @@ const getMovies = new API();
 let queueList = [];
 let watchedList = [];
 
-showWatchedFilms();
-
+// showWatchedFilms();
 function onLibraryClick(e) {
   e.preventDefault();
-  refs.gallery.innerHTML = '';
+  // refs.gallery.innerHTML = '';
+  refs.cardsContainerRef.innerHTML = '';
+  console.log('library');
+  showWatchedFilms();
 }
 
 function onWatchedBtn(e) {
@@ -55,6 +57,7 @@ function plugLib() {
 }
 
 export function showWatchedFilms() {
+  refs.cardsContainerRef.innerHTML = '';
   let array = localStorService.getFromWatchedLS();
   if (!array || array.length === 0) {
     // Если LocalStorage пуст делаем заглушку и прячем пагинацию
