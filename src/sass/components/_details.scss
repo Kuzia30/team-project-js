@@ -1,62 +1,65 @@
 .backdrop {
-  overflow: auto;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.25);
-  //   opacity: 0.25;
+  z-index: 1000;
+  background-color: var(--primary-white-color);
+  overflow: none;
+  @media screen and (min-width: 768px) {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 0;
+  }
+}
+
+.pop-up-mobile {
+  @media screen and (max-width: 767px) {
+    background-color: var(--primary-white-color);
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    width: 280px;
+    max-height: 100%;
+    overflow: auto;
+    padding: 0px 20px 40px;
+  }
 }
 
 .pop-up {
-  background-color: var(--primary-white-color);
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  padding: 48px 20px 40px;
   @media screen and (min-width: 768px) {
+    background-color: var(--primary-white-color);
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 618px;
-    // height: 562px;
+    max-height: 562px;
     padding: 42px 30px 40px;
   }
   @media screen and (min-width: 1024px) {
     min-width: 882px;
-    // height: 568px;
+    max-height: 568px;
     padding: 50px 30px 40px;
   }
 
+  &__close-btn-mobile {
+    @media screen and (max-width: 767px) {
+      @include close-btn;
+      margin-left: auto;
+    }
+  }
   &__close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    fill: var(--primary-text-color);
-    cursor: pointer;
-    line-height: 0;
-    transition: var(--transition-fill);
-
-    &:hover,
-    &:focus {
-      fill: var(--accent-color);
-      outline: none;
-      animation-duration: 500ms;
-      animation-iteration-count: infinite;
-      animation-delay: none;
+    display: none;
+    @media screen and (min-width: 768px) {
+      @include close-btn;
+      position: absolute;
+      // position: fixed;
+      top: 10px;
+      right: 10px;
     }
   }
 
@@ -171,6 +174,8 @@
 
 .title-value {
   text-transform: uppercase;
+  // white-space: nowrap;
+  // overflow: auto;
 }
 
 .about {
@@ -189,9 +194,11 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.67;
-    max-height: 200px;
-    overflow: auto;
+    max-height: auto;
+
     @media screen and (min-width: 768px) {
+      overflow: auto;
+      scrollbar-width: thin;
       max-height: 180px;
     }
     @media screen and (min-width: 1024px) {

@@ -16,6 +16,7 @@ export default {
   pagination: document.querySelector('.tui-pagination'),
   // pop-up about film
   backdrop: document.querySelector('.backdrop'),
+  closeBtnMobile: document.querySelector('.pop-up__close-btn-mobile'),
   closeBtn: document.querySelector('.pop-up__close-btn'),
   movieDetailsContainer: document.querySelector('.pop-up__container'),
 };

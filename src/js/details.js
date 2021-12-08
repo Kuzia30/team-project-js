@@ -30,6 +30,7 @@ function closeMovieWindow() {
 }
 
 refs.closeBtn.addEventListener('click', closeMovieWindow);
+refs.closeBtnMobile.addEventListener('click', closeMovieWindow);
 
 function closeEscape(event) {
   if (event.key === 'Escape') {
