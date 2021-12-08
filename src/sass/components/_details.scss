@@ -9,10 +9,12 @@
   padding: 20px 0px;
 
   &-btn-wrap {
-    background-color: var(--primary-white-color);
-    margin: 0 auto;
-    width: 280px;
-    padding: 10px;
+    @media screen and (max-width: 767px) {
+      background-color: var(--primary-white-color);
+      margin: 0 auto;
+      width: 280px;
+      padding: 10px;
+    }
   }
 }
 
