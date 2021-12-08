@@ -12,6 +12,7 @@ export function openMovieWindow({
 }) {
   refs.movieDetailsContainer.innerHTML = '';
   refs.backdrop.classList.remove('visually-hidden');
+  refs.body.classList.add('overflow-hidden');
   // const genresArray = data.genres;
   // console.log(genresArray);
   const genresSTR = genres.map(genre => genre.name).join(', ');

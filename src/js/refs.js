@@ -1,5 +1,6 @@
 export default {
   //gallery
+  body: document.querySelector('body'),
   gallery: document.querySelector('.gallery'),
   searchInput: document.querySelector('.input-key'),
   //preloader
@@ -12,7 +13,7 @@ export default {
   collection: document.querySelector('.collection'),
   cardsContainerRef: document.querySelector('.js-card-container'),
   libraryRef: document.querySelector('.js-library'),
-   movieImg: document.querySelector('.js-container'),
+  movieImg: document.querySelector('.js-container'),
   //pagination
   pagination: document.querySelector('.tui-pagination'),
   // pop-up about film
@@ -21,6 +22,6 @@ export default {
   closeBtn: document.querySelector('.pop-up__close-btn'),
   movieDetailsContainer: document.querySelector('.pop-up__container'),
   buttonToW: document.querySelector('.js-watched'),
-    buttonToQ: document.querySelector('.js-queue'),
-    imageModal: document.querySelector('.modal-poster'),
+  buttonToQ: document.querySelector('.js-queue'),
+  imageModal: document.querySelector('.modal-poster'),
 };
