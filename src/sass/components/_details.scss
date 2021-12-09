@@ -133,24 +133,38 @@
 }
 
 .movie-details {
-  display: flex;
   margin-bottom: 20px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.33;
-  &__keys {
-    color: var(--primary-text-color);
+
+  &__items {
+    display: flex;
+    width: 240px;
+    @media screen and (min-width: 768px) {
+      width: 264px;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 396px;
+    }
+  }
+
+  &__items:not(last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__key {
+    display: block;
+    color: var(--secondary-text-color);
     width: 108px;
     @media screen and (min-width: 1024px) {
       width: 152px;
     }
   }
-  &__values {
+
+  &__value {
     color: var(--primary-text-color);
-    width: 108px;
-    @media screen and (min-width: 1024px) {
-      width: 152px;
-    }
+    width: 100%;
   }
 }
 
@@ -180,16 +194,9 @@
     color: var(--rating-color);
   }
 }
-.value {
-  color: var(--primary-text-color);
-}
 
 .popularity-value {
   line-height: 1.17;
-}
-
-.detail {
-  margin-bottom: 10px;
 }
 
 .title-value {
