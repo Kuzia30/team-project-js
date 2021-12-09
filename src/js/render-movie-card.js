@@ -1,13 +1,11 @@
 import movieCardLibraryTmp from '../hbs/movie-card-library.hbs';
 import refs from './refs';
-import { openMovieWindow } from './renderOneMovie';
+import { openMovieWindow } from './render-one-movie';
 import { fetchMovie } from './API/theMovieApi';
 import { load, save, remove } from './localStorage';
 export function renderMovieCardLibrary(film) {
-
   refs.cardsContainerRef.insertAdjacentHTML('beforeend', movieCardLibraryTmp(film));
 }
-
 
 refs.cardsContainerRef.addEventListener('click', e => {
   e.preventDefault();
@@ -28,13 +26,11 @@ refs.cardsContainerRef.addEventListener('click', e => {
     btnQueue.addEventListener('click', addQueue);
     function addWatch() {
       console.log('click addwatchedkey');
-      addWatchList()
+      addWatchList();
     }
     function addQueue() {
-      addQueueList()
+      addQueueList();
       console.log('click queuekey');
     }
-
-    
   });
 });

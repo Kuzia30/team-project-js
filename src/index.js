@@ -5,29 +5,33 @@ import './js/pagination.js';
 import './js/searchInput';
 import './js/loader';
 import './js/details';
-import './js/renderOneMovie';
+import './js/render-one-movie';
+import './js/close-movie-card';
 import 'animate.css';
 import './js/themeSwitcher';
 import './js/localStorage';
 import { fetchMovies } from './js/API/theMovieApi';
 import { renderImages } from './js/renderImages';
-import { pagination } from './js/pagination'
+import { pagination } from './js/pagination';
 const pagin = pagination();
 const page = pagin.getCurrentPage();
 
-
-fetchMovies(page).then(data => ({
+fetchMovies(page)
+  .then(data => ({
     itemsFilm: data.results,
     total: data.total_pages,
-})).then(({ itemsFilm, total }) => {
-  renderImages(itemsFilm)
-  pagin.reset(total)
- });
+  }))
+  .then(({ itemsFilm, total }) => {
+    renderImages(itemsFilm);
+    pagin.reset(total);
+  });
 
 pagin.on('afterMove', ({ page }) => {
-  fetchMovies(page).then(data => ({
-    itemsFilm: data.results,
-  })).then(({ itemsFilm }) => {
-    renderImages(itemsFilm)
-  });
- });
+  fetchMovies(page)
+    .then(data => ({
+      itemsFilm: data.results,
+    }))
+    .then(({ itemsFilm }) => {
+      renderImages(itemsFilm);
+    });
+});

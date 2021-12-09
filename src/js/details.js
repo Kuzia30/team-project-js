@@ -1,6 +1,6 @@
 import { fetchMovie } from './API/theMovieApi';
 import refs from './refs';
-import { openMovieWindow } from './renderOneMovie';
+import { openMovieWindow } from './render-one-movie';
 import { load, save, remove } from './localStorage';
 import {} from './render-movie-card';
 
@@ -186,24 +186,3 @@ refs.gallery.addEventListener('click', e => {
     }
   });
 });
-
-function closeMovieWindow() {
-  refs.backdrop.classList.add('visually-hidden');
-  refs.body.classList.remove('overflow-hidden');
-  // refs.closeBtn.removeEventListener('click', closeMovieWindow);
-  // refs.closeBtnMobile.removeEventListener('click', closeMovieWindow);
-}
-
-refs.closeBtn.addEventListener('click', closeMovieWindow);
-refs.closeBtnMobile.addEventListener('click', closeMovieWindow);
-
-function closeEscape(event) {
-  if (event.key === 'Escape') {
-    refs.backdrop.classList.add('visually-hidden');
-    window.removeEventListener('keydown', closeEscape);
-    return;
-  }
-  window.removeEventListener('keydown', closeEscape);
-}
-
-window.addEventListener('keydown', closeEscape);

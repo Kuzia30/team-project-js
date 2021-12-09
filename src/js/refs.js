@@ -24,4 +24,7 @@ export default {
   buttonToW: document.querySelector('.js-watched'),
   buttonToQ: document.querySelector('.js-queue'),
   imageModal: document.querySelector('.modal-poster'),
+  // close pop-up
+  aboutFilmWindow: document.querySelector('.about-film-window'),
+  backdropInner: document.querySelector('.backdrop-inner'),
 };

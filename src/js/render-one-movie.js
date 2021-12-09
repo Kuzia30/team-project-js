@@ -1,9 +1,11 @@
 import refs from './refs';
+import { closeEscape, closeMovieWindow, closeBackdrop } from './close-movie-card';
 
 export function openMovieWindow({
   title,
   genres,
   poster_path,
+  //   backdrop_path,
   overview,
   original_title,
   vote_average,
@@ -13,12 +15,17 @@ export function openMovieWindow({
   refs.movieDetailsContainer.innerHTML = '';
   refs.backdrop.classList.remove('visually-hidden');
   refs.body.classList.add('overflow-hidden');
-  // const genresArray = data.genres;
-  // console.log(genresArray);
+  refs.aboutFilmWindow.addEventListener('click', closeBackdrop);
+  refs.closeBtn.addEventListener('click', closeMovieWindow);
+  refs.closeBtnMobile.addEventListener('click', closeMovieWindow);
+  window.addEventListener('keydown', closeEscape);
   const genresSTR = genres.map(genre => genre.name).join(', ');
-  // console.log(genresSTR);
+
   const posterPath = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-  // console.log(posterPath);
+  //   const backdropPath = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
+  //   console.log(posterPath);
+  //   console.log(backdropPath);
+
   const aboutMovieMarkup = `
         <div class="pop-up__container">
 
@@ -75,4 +82,10 @@ export function openMovieWindow({
         </div>
         `;
   refs.movieDetailsContainer.innerHTML = aboutMovieMarkup;
+
+  //   refs.closeBtn.addEventListener('click', closeMovieWindow);
+  //   refs.closeBtnMobile.addEventListener('click', closeMovieWindow);
+  //   window.addEventListener('keydown', closeEscape);
+  //   closeMovieWindow();
+  //   closeEscape();
 }

@@ -5,8 +5,6 @@
   width: 100vw;
   height: 100vh;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.25);
-  padding: 20px 0px;
 
   &-btn-wrap {
     @media screen and (max-width: 767px) {
@@ -16,6 +14,14 @@
       padding: 10px;
     }
   }
+}
+
+.about-film-window {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 20px 0px;
 }
 
 .pop-up-mobile {
