@@ -7,5 +7,5 @@ import './js/button-library';
 import './js/loader';
 import 'animate.css';
 import './js/themeSwitcher';
-import './js/renderOneMovie'
+import './js/render-one-movie';
 import './js/details';
