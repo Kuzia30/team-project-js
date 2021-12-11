@@ -19,8 +19,8 @@ const page = pagin.getCurrentPage();
 fetchMovies(page)
   .then(data => ({
     itemsFilm: data.results,
-    total: data.total_pages,
-  }))
+    total: data.total_results,
+  })) 
   .then(({ itemsFilm, total }) => {
     renderImages(itemsFilm);
     pagin.reset(total);

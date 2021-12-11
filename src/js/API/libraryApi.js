@@ -25,7 +25,7 @@ export default class moviesApiService {
           results.release_date = results.release_date ? this.getCuttedDate(results.release_date) : '';
         (results.title = results.title ? this.getCuttedName(results.title) : ''),
           (results.genres = results.genres ? this.getGenreNameForLibrary(results.genres) : []);
-        console.log(results);
+        // console.log(results);
         return results;
       });
    
@@ -34,7 +34,7 @@ export default class moviesApiService {
   getVote(string) {
     let vote = '';
     vote = string;
-    console.log(vote);
+    // console.log(vote);
      return vote;
   }
  
