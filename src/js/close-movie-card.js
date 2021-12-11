@@ -1,5 +1,5 @@
 import refs from './refs';
-
+// import {showWatchedFilms, showQueue } from './button-library';
 export function closeMovieWindow() {
   refs.backdrop.classList.add('visually-hidden');
   refs.body.classList.remove('overflow-hidden');
@@ -7,6 +7,7 @@ export function closeMovieWindow() {
   refs.closeBtnMobile.removeEventListener('click', closeMovieWindow);
   window.removeEventListener('keydown', closeEscape);
   refs.aboutFilmWindow.removeEventListener('click', closeBackdrop);
+  
 }
 
 export function closeEscape(event) {
@@ -17,7 +18,7 @@ export function closeEscape(event) {
     refs.aboutFilmWindow.removeEventListener('click', closeBackdrop);
     refs.closeBtn.removeEventListener('click', closeMovieWindow);
     refs.closeBtnMobile.removeEventListener('click', closeMovieWindow);
-    return;
+      return;
   }
 }
 
@@ -32,4 +33,14 @@ export function closeBackdrop(event) {
     refs.closeBtn.removeEventListener('click', closeMovieWindow);
     refs.closeBtnMobile.removeEventListener('click', closeMovieWindow);
   }
+  
 }
+
+  // if (refs.watchedBtn.classList.contains('library__btn' && 'current-btn' && 'watched-js') === true) {
+    //   // showWatchedFilms();
+    //   console.log('SHOWWHATHED');
+    // }
+    // if (refs.queueBtn.classList.contains('library__btn' && 'queue-js' && 'current-btn') === true) {
+    //   // showQueue();
+    //   console.log('SHOWWQUEUE');
+    // }

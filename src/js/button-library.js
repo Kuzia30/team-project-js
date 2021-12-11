@@ -54,7 +54,7 @@ function plugLib() {
   refs.gallery.insertAdjacentHTML('beforeend', clearLibrary);
 }
 
-export function showWatchedFilms() {
+ function showWatchedFilms() {
   refs.cardsContainerRef.innerHTML = '';
   let array = localStorService.getFromWatchedLS();
   if (!array || array.length === 0) {
@@ -71,10 +71,10 @@ export function showWatchedFilms() {
   });
 }
 
-export function showQueue() {
+ function showQueue() {
   let array = localStorService.getQueueLS();
   if (!array || array.length === 0) {
-    // Если LocalStorage делаем заглушку и прячем пагинацию
+    // Если LocalStorage пуст делаем заглушку и прячем пагинацию
     plugLib()
     refs.pagination.classList.add('visually-hidden');
     return;

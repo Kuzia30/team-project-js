@@ -6,7 +6,17 @@ export default class moviesApiService {
     this.query = '';
     this.totalPages = 1;
   }
+// test
+  // fetchMovieDetails(movieId) {
+  //   const url = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
+  //   return fetch(url)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       return data;
 
+  //     })
+  // }
+    
  getMovieByIdForLibrary(id) {
     return fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`)
       .then(r => r.json())
@@ -57,4 +67,6 @@ export default class moviesApiService {
     return cuttedDate;
     // console.log(string);
   }
+
+  
 }

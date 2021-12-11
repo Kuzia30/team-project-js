@@ -51,4 +51,10 @@ const remove = key => {
   }
 };
 
+
+// const arrWatchList = JSON.parse(localStorage.getItem('Watched'))
+
+
+// console.log('arrWatchList', arrWatchList);
+
 export { load, save, remove };

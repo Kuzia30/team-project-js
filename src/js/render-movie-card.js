@@ -2,7 +2,7 @@ import movieCardLibraryTmp from '../hbs/movie-card-library.hbs';
 import refs from './refs';
 import { openMovieWindow } from './render-one-movie';
 import { fetchMovie } from './API/theMovieApi';
-import { load, save, remove } from './localStorage';
+// import { load, save, remove } from './localStorage';
 export function renderMovieCardLibrary(film) {
   refs.cardsContainerRef.insertAdjacentHTML('beforeend', movieCardLibraryTmp(film));
 }
@@ -24,11 +24,12 @@ refs.cardsContainerRef.addEventListener('click', e => {
     const btnQueue = refs.movieDetailsContainer.querySelector('.js-queue');
     btnWatch.addEventListener('click', addWatch);
     btnQueue.addEventListener('click', addQueue);
-    function addWatch() {
+   async function addWatch() {
       console.log('click addwatchedkey');
-      addWatchList();
+     addWatchList();
+     
     }
-    function addQueue() {
+   async function addQueue() {
       addQueueList();
       console.log('click queuekey');
     }
