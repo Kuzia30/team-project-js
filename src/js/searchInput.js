@@ -13,9 +13,10 @@ const page = pagin.getCurrentPage();
 function searchMovie(e) {
   const searchWord = e.target.value.trim();
   if (searchWord.length === 0) {
+
     fetchMovies(page).then(data => ({
       itemsFilm: data.results,
-      total: data.total_pages,
+      total: data.total_results,
     })).then(({ itemsFilm, total }) => {
     renderImages(itemsFilm)
     pagin.reset(total)
@@ -37,21 +38,26 @@ function searchMovie(e) {
   }
 
   fetchKeywordMovie(searchWord).then(data => {
-    console.log(data);
+    console.log(data.total_results);
+    
     if (data.results.length <= 0) {
       Notify.failure('Search result not successful. Enter the correct movie.');
       return;
     }
+
+     if (data.total_results <= 20) {
+      refs.pagination.style.display = "none"
+    }
     
   fetchKeywordMovie(searchWord, page).then(data => ({
     itemsFilm: data.results,
-    total: data.total_pages,
+    total: data.total_results,
     })).then(({ itemsFilm, total }) => {
       renderImages(itemsFilm)
       pagin.reset(total)
   });
 
-pagin.on('afterMove', ({ page }) => {
+  pagin.on('afterMove', ({ page }) => {
   fetchKeywordMovie(searchWord, page).then(data => ({
     itemsFilm: data.results,
   })).then(({ itemsFilm }) => {
@@ -59,4 +65,6 @@ pagin.on('afterMove', ({ page }) => {
      });
     });
   });
+
+ 
 }

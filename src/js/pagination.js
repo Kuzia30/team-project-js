@@ -4,8 +4,7 @@ import refs from './refs';
 
 export function pagination(params = {}) {
 const options = {
-  totalItems: 1000,
-  itemsPerPage: 9,
+  itemsPerPage: 20,
   visiblePages: 5,
   page: 1,
   centerAlign: true,
