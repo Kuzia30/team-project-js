@@ -21,7 +21,7 @@ export function openMovieWindow({
   window.addEventListener('keydown', closeEscape);
   const genresSTR = genres.map(genre => genre.name).join(', ');
 
-  const posterPath = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const posterPath = `https://image.tmdb.org/t/p/w342/${poster_path}`;
   //   const backdropPath = `https://image.tmdb.org/t/p/w500/${backdrop_path}`;
   //   console.log(posterPath);
   //   console.log(backdropPath);
