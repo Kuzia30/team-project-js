@@ -1,0 +1,23 @@
+.back-to-top {
+  display: none;
+  background: url(../images/orange_arrow_up.svg) no-repeat 0 0;
+  position: fixed;
+  bottom: 130px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  @media screen and (max-width: 767px) {
+    padding: 20px;
+  }
+}
+
+.back-to-top:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}

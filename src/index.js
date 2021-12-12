@@ -35,3 +35,4 @@ pagin.on('afterMove', ({ page }) => {
       renderImages(itemsFilm);
     });
 });
+
