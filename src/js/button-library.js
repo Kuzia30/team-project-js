@@ -12,6 +12,46 @@ const getMovies = new API();
 let queueList = [];
 let watchedList = [];
 
+
+// =================================================================infinite scroll
+let currentPage = 1;
+let currentAmountFilms = 0;
+
+function renderCardPerPage() {
+  let movieArray
+  if (refs.watchedBtn.classList.contains('current-btn')) {
+     movieArray = getWatchedList();
+  } else {
+    movieArray = getQueueList();
+  }
+
+  let filmsPerPage = 9;
+  let totalfilms = movieArray.length;
+  let pages = Math.ceil(totalfilms / filmsPerPage);
+
+  if (currentPage <= pages) {
+    for (let i = currentAmountFilms; i < currentPage * filmsPerPage; i += 1) {
+      if (currentAmountFilms < totalfilms) {
+        getMovies.getMovieByIdForLibrary(movieArray[i]).then(renderMovieCardLibrary);
+        currentAmountFilms++;
+      }
+    }
+  }
+  currentPage++;
+}
+
+function infineteScroll() {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+      renderCardPerPage();
+    }
+  });
+}
+
+// =================================================================infinity scroll
+
+
+
 showWatchedFilms();
 function onLibraryClick(e) {
   e.preventDefault();
@@ -26,7 +66,9 @@ function onWatchedBtn(e) {
     console.log('click wathed');
     refs.queueBtn.classList.remove('current-btn');
     refs.watchedBtn.classList.add('current-btn');
-    refs.gallery.innerHTML = '';
+  refs.gallery.innerHTML = '';
+  currentPage = 1;
+  currentAmountFilms = 0;
   showWatchedFilms();
     console.log('у тебя есть просмотренные фильмы');
   
@@ -36,7 +78,9 @@ function onQueueBtn(e) {
     e.preventDefault();
     refs.queueBtn.classList.add('current-btn');
     refs.watchedBtn.classList.remove('current-btn');
-    refs.gallery.innerHTML = '';
+  refs.gallery.innerHTML = '';
+  currentPage = 1;
+  currentAmountFilms = 0;
   showQueue();
   console.log('у тебя есть очередь просмотра');
 }
@@ -65,10 +109,8 @@ function plugLib() {
   }
   refs.cardsContainerRef.innerHTML = '';
   refs.pagination.classList.remove('visually-hidden');
-      getWatchedList().forEach(movie => {
-    getMovies.getMovieByIdForLibrary(movie)
-      .then(renderMovieCardLibrary);
-  });
+   renderCardPerPage();
+   infineteScroll();
 }
 
  function showQueue() {
@@ -82,10 +124,8 @@ function plugLib() {
   refs.cardsContainerRef.innerHTML = '';
   refs.pagination.classList.remove('visually-hidden');
   
-  getQueueList().forEach(movie => {
-    getMovies.getMovieByIdForLibrary(movie)
-      .then(renderMovieCardLibrary);
-  });
+   renderCardPerPage();
+   infineteScroll();
 }
 
 function getQueueList() {
