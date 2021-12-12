@@ -9,7 +9,3 @@ export default function fetchTrailers(id) {
     return response.json();
   });
 }
-
-// fetchTrailers(580489).then(({ results }) => {
-//   console.log(results);
-// });

@@ -24,12 +24,11 @@ refs.cardsContainerRef.addEventListener('click', e => {
     const btnQueue = refs.movieDetailsContainer.querySelector('.js-queue');
     btnWatch.addEventListener('click', addWatch);
     btnQueue.addEventListener('click', addQueue);
-   async function addWatch() {
+    async function addWatch() {
       console.log('click addwatchedkey');
-     addWatchList();
-     
+      addWatchList();
     }
-   async function addQueue() {
+    async function addQueue() {
       addQueueList();
       console.log('click queuekey');
     }
