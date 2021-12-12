@@ -2,6 +2,7 @@ import { fetchMovie } from './API/theMovieApi';
 import refs from './refs';
 import { openMovieWindow } from './render-one-movie';
 import { load, save, remove } from './localStorage';
+import fetchTrailers from './API/trailerApi';
 // export { showQueue, showWatchedFilms } from './button-library'
 // import {showWatchedFilms, showQueue } from './button-library';
 refs.gallery.addEventListener('click', e => {
@@ -20,14 +21,11 @@ refs.gallery.addEventListener('click', e => {
     // console.log(data);
     // Kretsul
     // получаем данные из массива ключей localstorage
-     const arrWatchList = JSON.parse(localStorage.getItem('Watched'));
+    const arrWatchList = JSON.parse(localStorage.getItem('Watched'));
     const arrQueueList = JSON.parse(localStorage.getItem('Queue'));
     console.log('arrWatchList', arrWatchList);
     console.log('arrQueueList', arrQueueList);
     console.log('MY ID', id);
-    
-
-
 
     const btnWatch = refs.movieDetailsContainer.querySelector('.js-watched');
     const btnQueue = refs.movieDetailsContainer.querySelector('.js-queue');
@@ -41,19 +39,18 @@ refs.gallery.addEventListener('click', e => {
       addQueueList();
       console.log('click queuekey');
     }
-    
+
     // console.log('w', watchedList);
     // checkWatchedList()
     // проверка массива на наличие элемента
- 
+
     // function checkWatchedList() {
     //   //     const repeatedIndexWatched = watchedList.filter(elem => elem.id === id);
     //   //    console.log('repeat', repeatedIndexWatched);
     //   // }
-     
+
     //   }
-      
-    
+
     //add watch
     function addWatchList() {
       const btnWatch = refs.movieDetailsContainer.querySelector('.js-watched');
@@ -106,48 +103,46 @@ refs.gallery.addEventListener('click', e => {
 
       textModalBtn();
     }
-     // сверяем полученные данные из массива ключей Watch localstorage на включение в списке и изменение текста и стиля кнопок
-      // нужно добавить setTimeout
-        if (arrWatchList.includes(id)) {
+    // сверяем полученные данные из массива ключей Watch localstorage на включение в списке и изменение текста и стиля кнопок
+    // нужно добавить setTimeout
+    if (arrWatchList.includes(id)) {
+      console.log('такой фильм есть в списке просмотренных');
+      btnWatch.disabled = false;
+      btnWatch.textContent = 'Remove from watched';
+      btnWatch.classList.add('current-btn');
+      // refs.gallery.innerHTML = '';
+      // refs.cardsContainerRef.innerHTML = '';
+      // showWatchedFilms();
+      console.log('Очистка');
+    }
+    if (arrWatchList.includes(!id)) {
+      btnWatch.textContent = 'Added to watched';
+      btnWatch.disabled = true;
+      // refs.gallery.innerHTML = '';
+      // refs.cardsContainerRef.innerHTML = '';
+      // showWatchedFilms();
+      console.log('Очистка');
+    }
+    // нужно добавить setTimeout
 
-          console.log('такой фильм есть в списке просмотренных');
-          btnWatch.disabled = false;
-          btnWatch.textContent = 'Remove from watched';
-          btnWatch.classList.add('current-btn');
-          // refs.gallery.innerHTML = '';
-          // refs.cardsContainerRef.innerHTML = '';
-            // showWatchedFilms();
-            console.log('Очистка');
-      }
-        if (arrWatchList.includes(!id)) {
-          btnWatch.textContent = 'Added to watched';
-          btnWatch.disabled = true;
-          // refs.gallery.innerHTML = '';
-          // refs.cardsContainerRef.innerHTML = '';
-            // showWatchedFilms();
-            console.log('Очистка');
-      }
-          // нужно добавить setTimeout
-    
-     // сверяем полученные данные из массива ключей Queue localstorage на включение в списке и изменение текста и стиля кнопок
-      // нужно добавить setTimeout
-        if (arrQueueList.includes(id)) {
-          console.log('такой фильм есть в списке очереди на просмотр');
-         btnQueue.disabled = false;
-          btnQueue.textContent = 'Remove from queue';
-          btnQueue.classList.add('current-btn');
-          // refs.cardsContainerRef.innerHTML = '';
-          // showQueue();
-      }
-        if (arrQueueList.includes(!id)) {
+    // сверяем полученные данные из массива ключей Queue localstorage на включение в списке и изменение текста и стиля кнопок
+    // нужно добавить setTimeout
+    if (arrQueueList.includes(id)) {
+      console.log('такой фильм есть в списке очереди на просмотр');
+      btnQueue.disabled = false;
+      btnQueue.textContent = 'Remove from queue';
+      btnQueue.classList.add('current-btn');
+      // refs.cardsContainerRef.innerHTML = '';
+      // showQueue();
+    }
+    if (arrQueueList.includes(!id)) {
+      btnQueue.textContent = 'Added to queue';
+      btnQueue.disabled = true;
+      // refs.cardsContainerRef.innerHTML = '';
+      // showQueue();
+    }
+    // нужно добавить setTimeout
 
-           btnQueue.textContent = 'Added to queue';
-          btnQueue.disabled = true;
-          // refs.cardsContainerRef.innerHTML = '';
-          // showQueue();
-      }
-          // нужно добавить setTimeout
-    
     // смена текста кнопок
     function textModalBtn(id) {
       const btnWatch = refs.movieDetailsContainer.querySelector('.js-watched');
@@ -214,7 +209,7 @@ refs.gallery.addEventListener('click', e => {
     }
 
     //add queue
-     function addQueueList() {
+    function addQueueList() {
       const btnQueue = refs.movieDetailsContainer.querySelector('.js-queue');
       if (btnQueue.classList.contains('current-btn')) {
         removeFromQueueList(id);
@@ -248,7 +243,21 @@ refs.gallery.addEventListener('click', e => {
         }
       }
     }
+    // Trailers render
+    const btnTrailer = refs.movieDetailsContainer.querySelector('.js-trailer');
+    btnTrailer.addEventListener('click', openTrailer);
+    function openTrailer(e) {
+      fetchTrailers(id).then(({ results }) => {
+        const trailerEl = refs.movieDetailsContainer.querySelector('.trailer');
+        const trailers = results
+          .filter(trailer => trailer.type === 'Trailer')
+          .map(
+            trailer =>
+              `<iframe class="trailer__frame" src="https://www.youtube.com/embed/${trailer.key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+          );
+        trailerEl.classList.remove('is-hidden');
+        trailerEl.innerHTML = trailers[0];
+      });
+    }
   });
-
-  
 });
