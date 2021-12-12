@@ -91,7 +91,7 @@ function plugLib() {
     <ul><div class="clear-list">
     <h3 class="clear-list__title">Oops...</h3>
     <p class="clear-list__text">Your movie list is empty!</p>
-    <a href="./index.html"><button href="./index.html" class="button-lib" type="button">Back to Homepage</button></a>
+   <button onclick="window.location.href='index.html'" class="button-lib" type="button">Back to Homepage</button></a>
     </div></ul></div>`
   );
   console.log('Твоя библиотека пуста');

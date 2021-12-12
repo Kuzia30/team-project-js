@@ -31,9 +31,9 @@ export function openMovieWindow({
 
           <div class="pop-up__thumb">
                 <picture>
-                    <source srcset="${posterPath}" media="(min-width: 1024px)" width="396px" />
-                    <source srcset="${posterPath}" media="(min-width: 768px)" width="264px" height="374px"/>
-                    <source srcset="${posterPath}" media="(min-width: 320px)" width="240px" height="356px"/>
+                    <source srcset="${posterPath}" media="(min-width: 1024px)" height="478px" />
+                    <source srcset="${posterPath}" media="(min-width: 768px)" height="374px"/>
+                    <source srcset="${posterPath}" media="(min-width: 320px)" height="356px"/>
                     <img class="pop-up__poster" src="${posterPath}" alt="Movie poster"/>
                 </picture>
                 <button class=" js-trailer" type="button">

@@ -80,7 +80,7 @@ refs.gallery.addEventListener('click', e => {
         if (watchSet.has(id)) {
           textModalBtn(id);
         } else {
-          watchList.push(id);
+          watchList.unshift(id);
           save('Watched', watchList);
           textModalBtn(id);
         }
@@ -237,7 +237,7 @@ refs.gallery.addEventListener('click', e => {
         if (queueSet.has(id)) {
           textModalBtn(id);
         } else {
-          queueList.push(id);
+          queueList.unshift(id);
           save('Queue', queueList);
           textModalBtn(id);
         }
