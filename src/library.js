@@ -9,3 +9,4 @@ import 'animate.css';
 import './js/themeSwitcher';
 import './js/render-one-movie';
 import './js/details';
+import './js/button-back-to-top'
