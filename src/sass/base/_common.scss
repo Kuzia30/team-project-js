@@ -6,7 +6,7 @@ body {
 
   min-height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
+  grid-template-rows: auto 1fr;
 }
 
 html {
