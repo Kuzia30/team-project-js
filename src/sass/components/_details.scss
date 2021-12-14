@@ -93,21 +93,21 @@
   &__thumb {
     position: relative;
     border-radius: 5px;
-    height: 356px;
     width: 240px;
+    height: 356px;
     overflow: hidden;
     background-size: cover;
-    background-color: rgba(233, 224, 220, 0.438);
+    // background-color: rgba(235, 215, 206, 0.5);
     margin-bottom: 30px;
     @media screen and (min-width: 768px) {
-      height: 374px;
       width: 264px;
+      height: 374px;
       margin-bottom: 0;
       margin-right: 30px;
     }
     @media screen and (min-width: 1024px) {
-      height: 478px;
       width: 396px;
+      height: 478px;
     }
   }
 

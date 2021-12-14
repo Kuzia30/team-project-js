@@ -41,7 +41,6 @@ export function openMovieWindow({
                     <source srcset="${posterPath}" media="(min-width: 1024px)" width="396px" />
                     <source srcset="${posterPathMobile}" media="(min-width: 768px)" width="264px"/>
                     <source srcset="${posterPathMobile}" media="(min-width: 320px)" width="240px"/>
-
                     <img class="pop-up__poster" src="${posterPath}" alt="Movie poster" loading="lazy"/>
                 </picture>
                 <button class=" js-trailer" type="button">
