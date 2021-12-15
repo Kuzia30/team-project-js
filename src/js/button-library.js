@@ -53,7 +53,7 @@ function infineteScroll() {
 
 
 showWatchedFilms();
-function onLibraryClick(e) {
+function onLibraryClick() {
   e.preventDefault();
   // refs.gallery.innerHTML = '';
   refs.cardsContainerRef.innerHTML = '';
