@@ -87,12 +87,11 @@ function onQueueBtn(e) {
 
 function plugLib() {
     const clearLibrary = (
-    `<div class="container">
-    <ul><div class="clear-list">
+    `<div class="clear-list">
     <h3 class="clear-list__title">Oops...</h3>
     <p class="clear-list__text">Your movie list is empty!</p>
    <button onclick="window.location.href='index.html'" class="button-lib" type="button">Back to Homepage</button></a>
-    </div></ul></div>`
+    </div>`
   );
   console.log('Твоя библиотека пуста');
   refs.gallery.insertAdjacentHTML('beforeend', clearLibrary);
