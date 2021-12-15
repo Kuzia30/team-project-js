@@ -108,6 +108,10 @@
     @media screen and (min-width: 1024px) {
       width: 396px;
       height: 478px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: contain;
     }
   }
 
