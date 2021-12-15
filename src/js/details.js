@@ -3,6 +3,7 @@ import refs from './refs';
 import { openMovieWindow } from './render-one-movie';
 import { load, save, remove } from './localStorage';
 import fetchTrailers from './API/trailerApi';
+import { Notify } from 'notiflix';
 // export { showQueue, showWatchedFilms } from './button-library'
 // import {showWatchedFilms, showQueue } from './button-library';
 refs.gallery.addEventListener('click', e => {
@@ -41,7 +42,7 @@ refs.gallery.addEventListener('click', e => {
     }
     function addQueue() {
       addQueueList();
-        //скрываем карточку
+      //скрываем карточку
       const removeElW = document.querySelector(`li[data-idli="${id}"]`);
       removeElW.classList.toggle('visually-hidden');
       console.log('click queuekey');
@@ -262,6 +263,10 @@ refs.gallery.addEventListener('click', e => {
             trailer =>
               `<iframe class="trailer__frame" src="https://www.youtube.com/embed/${trailer.key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
           );
+        if (trailers.length === 0) {
+          Notify.warning('Trailer not found');
+          return;
+        }
         trailerEl.classList.remove('is-hidden');
         trailerEl.innerHTML = trailers[0];
       });
