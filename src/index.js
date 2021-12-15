@@ -19,7 +19,7 @@ const page = pagin.getCurrentPage();
 fetchMovies(page)
   .then(data => ({
     itemsFilm: data.results,
-    total: data.total_results,
+    total: 10000,
   })) 
   .then(({ itemsFilm, total }) => {
     renderImages(itemsFilm);
