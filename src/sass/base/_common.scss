@@ -1,8 +1,15 @@
 body {
   font-family: var(--main-font);
-
   background-color: var(--primary-white-color);
   color: var(--primary-text-color);
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+html {
+  height: 100%;
 }
 
 h1,
