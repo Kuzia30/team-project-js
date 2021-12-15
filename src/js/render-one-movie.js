@@ -21,8 +21,8 @@ export function openMovieWindow({
   window.addEventListener('keydown', closeEscape);
   const genresSTR = genres.map(genre => genre.name).join(', ');
 
-  const posterPath = `https://image.tmdb.org/t/p/w342/${poster_path}`;
-  const posterPathMobile = `https://image.tmdb.org/t/p/w185/${poster_path}`;
+  const posterPath = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const posterPathMobile = `https://image.tmdb.org/t/p/w342/${poster_path}`;
 
   //   `<img
   //     class="pop-up__poster"
@@ -39,8 +39,8 @@ export function openMovieWindow({
           <div class="pop-up__thumb">
                 <picture>
                     <source srcset="${posterPath}" media="(min-width: 1024px)" width="396px" />
-                    <source srcset="${posterPath}" media="(min-width: 768px)" width="264px" height="374px"/>
-                    <source srcset="${posterPathMobile}" media="(min-width: 320px)" width="240px" height="356px"/>
+                    <source srcset="${posterPathMobile}" media="(min-width: 768px)" width="264px"/>
+                    <source srcset="${posterPathMobile}" media="(min-width: 320px)" width="240px"/>
                     <img class="pop-up__poster" src="${posterPath}" alt="Movie poster" loading="lazy"/>
                 </picture>
                 <button class=" js-trailer" type="button">

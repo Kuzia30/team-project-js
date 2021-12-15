@@ -1,9 +1,5 @@
 .footer {
   background-color: var(--footer-grey-color);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  // grid-row-start: 2;
-  // grid-row-end: 3;
 }
 
 .footer__box {
@@ -62,4 +58,18 @@
   background-color: var(--footer-grey-color);
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
