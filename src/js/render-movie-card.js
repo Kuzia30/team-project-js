@@ -25,12 +25,12 @@ refs.cardsContainerRef.addEventListener('click', e => {
     btnWatch.addEventListener('click', addWatch);
     btnQueue.addEventListener('click', addQueue);
     async function addWatch() {
-      console.log('click addwatchedkey');
+      // console.log('click addwatchedkey');
       addWatchList();
     }
     async function addQueue() {
       addQueueList();
-      console.log('click queuekey');
+      // console.log('click queuekey');
     }
   });
 });

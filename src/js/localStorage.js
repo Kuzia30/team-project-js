@@ -1,7 +1,7 @@
 export default class LocalStorService {
   
   // Получить массив объектов из списка Watched
-  getFromWatchedLS() {
+ getFromWatchedLS() {
     try {
       const movieArr = JSON.parse(localStorage.getItem('Watched'));
       return movieArr === null ? undefined : movieArr;
@@ -11,7 +11,7 @@ export default class LocalStorService {
   }
 
   // Получить массив объектов из списка Queue
-  getQueueLS() {
+ getQueueLS() {
     try {
       const movieArr = JSON.parse(localStorage.getItem('Queue'));
       return movieArr === null ? undefined : movieArr;
@@ -50,11 +50,5 @@ const remove = key => {
     console.error('Remove state error: ', err);
   }
 };
-
-
-// const arrWatchList = JSON.parse(localStorage.getItem('Watched'))
-
-
-// console.log('arrWatchList', arrWatchList);
 
 export { load, save, remove };
