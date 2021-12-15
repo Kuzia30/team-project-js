@@ -33,10 +33,17 @@ refs.gallery.addEventListener('click', e => {
     btnQueue.addEventListener('click', addQueue);
     function addWatch() {
       console.log('click addwatchedkey');
+
       addWatchList();
+      //скрываем карточку
+      const removeElW = document.querySelector(`li[data-idli="${id}"]`);
+      removeElW.classList.toggle('visually-hidden');
     }
     function addQueue() {
       addQueueList();
+        //скрываем карточку
+      const removeElW = document.querySelector(`li[data-idli="${id}"]`);
+      removeElW.classList.toggle('visually-hidden');
       console.log('click queuekey');
     }
 
